@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CryptoTicker</string>
+    <string name="crypto_ticker">Crypto Ticker</string>
+    <string name="bitcoin">Bitcoin :</string>
+    <string name="ethereum">Ethereum :</string>
+    <string name="bitcoin_cash">Bitcoin Cash :</string>
+    <string name="ripple">Ripple :</string>
+    <string name="lite_coin">Lite Coin :</string>
+    <string name="miota">MIOTA :</string>
+    <string name="omg">OMG :</string>
+    <string name="gnt">GNT :</string>
+    <string name="refresh">Refresh</string>
+</resources>

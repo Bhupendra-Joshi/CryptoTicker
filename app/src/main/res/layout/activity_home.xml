@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.crypto.bhupendra.cryptoticker.HomeActivity">
+
+    <data>
+
+        <variable
+            name="ticker"
+            type="com.crypto.bhupendra.cryptoticker.network.models.Response" />
+
+        <import type="com.crypto.bhupendra.cryptoticker.util.TextUtil" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/crypto_ticker"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:textSize="22sp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<android.support.constraint.Guideline-->
+        <!--android:id="@+id/guideline"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="parent"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintGuide_percent=".5" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_bitcoin_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/bitcoin"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_bitcoin_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="Bitcoin Value"-->
+        <!--android:text="@{ticker.BTC}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_eth_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/ethereum"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_bitcoin_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_eth_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="Ethereum Value"-->
+        <!--android:text="@{ticker.ETH}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_bitcoin_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_bch_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/bitcoin_cash"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_eth_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_bch_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="Bitcoin Cash Value"-->
+        <!--android:text="@{ticker.BCH}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_eth_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_xrp_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/ripple"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_bch_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_xrp_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="Ripple Value"-->
+        <!--android:text="@{ticker.XRP}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_bch_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_ltc_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/lite_coin"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_xrp_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_ltc_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="Lite Coin Value"-->
+        <!--android:text="@{ticker.LTC}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_xrp_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_miota_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/miota"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_ltc_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_miota_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="MIOTA Value"-->
+        <!--android:text="@{ticker.MIOTA}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_ltc_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_omg_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/omg"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_miota_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_omg_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--tools:text="OMG Value"-->
+        <!--android:text="@{ticker.OMG}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_miota_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_gnt_title"-->
+        <!--style="@style/LeftCustomTextView"-->
+        <!--android:text="@string/gnt"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_omg_title" />-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/tv_gnt_value"-->
+        <!--style="@style/RightCustomTextView"-->
+        <!--android:text="@{ticker.GNT}"-->
+        <!--tools:text="GNT Value"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/guideline"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tv_omg_title" />-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_refresh" />
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/white"
+            android:text="@string/refresh" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
