@@ -1,6 +1,5 @@
 package com.crypto.bhupendra.cryptoticker.util
 
-import android.support.annotation.IntegerRes
 import java.text.DecimalFormat
 
 /**
@@ -14,8 +13,7 @@ class TextUtil {
             if (numberString == null) {
                 return ""
             }
-            var newString: String = DecimalFormat("##,##,##,###.00").format(numberString.toFloat())
-            return newString
+            return DecimalFormat("##,##,##,###.00").format(numberString.toFloat())
         }
     }
 }

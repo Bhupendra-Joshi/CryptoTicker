@@ -1,10 +1,7 @@
 package com.crypto.bhupendra.cryptoticker
 
-import android.app.PictureInPictureParams
 import android.databinding.DataBindingUtil
-import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
