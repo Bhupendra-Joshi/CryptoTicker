@@ -1,10 +1,13 @@
 package com.crypto.bhupendra.cryptoticker
 
+import android.app.PictureInPictureParams
 import android.databinding.DataBindingUtil
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
+import android.util.Rational
 import android.view.View
 import android.view.View.OnClickListener
 import com.crypto.bhupendra.cryptoticker.databinding.ActivityHomeBinding
@@ -100,7 +103,14 @@ class HomeActivity : AppCompatActivity(), OnClickListener, OnUpdate {
 
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
-        enterPictureInPictureMode()
+        val build = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val build = PictureInPictureParams.Builder()
+                    .setAspectRatio(Rational(300, 240))
+                    .build()
+            enterPictureInPictureMode(build)
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
     }
 
 }

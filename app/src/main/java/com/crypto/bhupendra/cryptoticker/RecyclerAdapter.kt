@@ -9,12 +9,10 @@ import com.crypto.bhupendra.cryptoticker.databinding.ListItemBinding
 /**
  * Created by bhupendra on 31/1/18.
  */
-class RecyclerAdapter(list: ArrayList<String>) : RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
+class RecyclerAdapter(private var list: ArrayList<String>) : RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
 
-    private var list = list
-
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerAdapter.RecyclerViewHolder {
-        val binding: ListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent?.context), R.layout.list_item, parent, false);
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.RecyclerViewHolder {
+        val binding: ListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.list_item, parent, false)
         return RecyclerViewHolder(binding)
     }
 
@@ -22,8 +20,8 @@ class RecyclerAdapter(list: ArrayList<String>) : RecyclerView.Adapter<RecyclerAd
         return list.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.RecyclerViewHolder?, position: Int) {
-        holder?.bindData(list.get(position))
+    override fun onBindViewHolder(holder: RecyclerAdapter.RecyclerViewHolder, position: Int) {
+        holder.bindData(list.get(position))
     }
 
 
@@ -32,17 +30,15 @@ class RecyclerAdapter(list: ArrayList<String>) : RecyclerView.Adapter<RecyclerAd
         notifyItemRemoved(position)
     }
 
-    class RecyclerViewHolder(binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
-        private var binding = binding
+    class RecyclerViewHolder(private var binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(data: String) {
-            binding?.text = data
+            binding.text = data
         }
     }
 
     fun changeItemPosition(originalPosition: Int, targetPosition: Int) {
-        var item = list.get(originalPosition)
+        val item = list.get(originalPosition)
         list.removeAt(originalPosition)
         list.add(targetPosition, item)
 

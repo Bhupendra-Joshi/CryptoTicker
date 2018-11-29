@@ -10,16 +10,16 @@ import com.crypto.bhupendra.cryptoticker.OnUpdate
  */
 class CustomItemTouchHelperCallback(dragDirs: Int, swipeDirs: Int, listener: OnUpdate) : ItemTouchHelper.SimpleCallback(dragDirs, swipeDirs) {
 
-    var listener = listener
-    override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?, target: RecyclerView.ViewHolder?): Boolean {
-        Log.e(viewHolder?.layoutPosition.toString(), target?.layoutPosition.toString())
-        listener.onChangeposition(viewHolder?.layoutPosition!!, target?.layoutPosition!!)
+    private var listener = listener
+    override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+        Log.e(viewHolder.layoutPosition.toString(), target.layoutPosition.toString())
+        listener.onChangeposition(viewHolder.layoutPosition, target.layoutPosition)
         return true
     }
 
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder?, direction: Int) {
+    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         if (direction == ItemTouchHelper.RIGHT) {
-            listener.onRemoveItem(viewHolder?.adapterPosition!!)
+            listener.onRemoveItem(viewHolder.adapterPosition)
         }
     }
 }
